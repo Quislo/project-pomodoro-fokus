@@ -35,21 +35,26 @@ stopBtn.addEventListener('click', () => {
     });
 
 focoBtn.addEventListener('click', () => {
-      mudarContexto('foco');
+    tempoDecorridoSegundos = 1500; // 25 minutinhos  
+    mudarContexto('foco');
       focoBtn.classList.add('active');
 });
 
 curtoBtn.addEventListener('click', () => {
+        tempoDecorridoSegundos = 300; // 5 minutinhos 
        mudarContexto('descanso-curto');
        curtoBtn.classList.add('active');
 });
 
 longoBtn.addEventListener('click', () => {
+   tempoDecorridoSegundos = 900; // 15 minutinhos
    mudarContexto('descanso-longo');
    longoBtn.classList.add('active');
 });
 
 function mudarContexto(contexto) {
+    zerar();
+
     botoes.forEach((function(contexto)
          {
             contexto.classList.remove('active');
@@ -59,6 +64,7 @@ function mudarContexto(contexto) {
     banner.setAttribute('src',`./imagens/${contexto}.png`);
     switch(contexto) {
         case 'foco':
+            tempoDecorridoSegundos = 1500; // 25 minutos
             titulo.innerHTML = `
                 Otimize sua produtividade,<br>
                 <strong class="app__title-strong">mergulhe no que importa.</strong>
@@ -91,6 +97,9 @@ function mudarContexto(contexto) {
             `
             break;
     }
+
+    atualizarTimerDisplay();
+
     
 } 
 
