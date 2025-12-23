@@ -13,6 +13,7 @@ const musicBeep = new Audio('./sons/beep.mp3');
 const controlarMusica = document.querySelector('#alternar-musica');
 const startPause = document.querySelector('#start-pause');
 const timerElement = document.querySelector('#timer');
+const timerHead = document.querySelector('.timer-head');
 const stopBtn = document.querySelector('#stop-timer');
 musica.loop = true; // Define a música para repetir em loop
 
@@ -73,13 +74,11 @@ function mudarContexto(contexto) {
 
         case 'descanso-curto':
             
-        
+            tempoDecorridoSegundos = 300; // 5 minutos
             titulo.innerHTML = 
             
             
-            tempoDecorridoSegundos = 300; // 5 minutos
 
-            atualizarTimerDisplay();
             `
                 Que tal dar uma respirada?<br>
                 <strong class="app__title-strong">Faça uma pausa curta!</strong>
@@ -106,9 +105,10 @@ function mudarContexto(contexto) {
 const contagemRegressiva =() => {
 
             if(tempoDecorridoSegundos <= 0){
+                zerar();
                 musicBeep.play();
                 alert('O tempo acabou!');
-                zerar();
+
                 
                 startPause.innerHTML = `
                     <img class="app__card-primary-butto-icon" src="/imagens/play_arrow.png" alt="">
@@ -157,11 +157,16 @@ function atualizarTimerDisplay() {
     const segundos = tempoDecorridoSegundos % 60;
     const formatoMinutos = minutos.toString().padStart(2, '0');
     const formatoSegundos = segundos.toString().padStart(2, '0');
+    const tempoFormatado = `${formatoMinutos}:${formatoSegundos}`;
+
     document.getElementById('timer').textContent = `${formatoMinutos}:${formatoSegundos}`;
+    document.title = `${tempoFormatado} - Fokus`;
 }
+
 
 function encerrarTimer() {
     zerar();
+    musicBeep.play();
 
     startPause.innerHTML = `
         <img class="app__card-primary-butto-icon" src="./imagens/play_arrow.png" alt="">
