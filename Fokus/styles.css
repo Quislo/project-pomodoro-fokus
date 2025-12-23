@@ -80,9 +80,10 @@ h1, h2, h3, h4, h5, h6 {
     border: 0.2rem solid var(--azul-royal);
     background: var(--fundo-card-timer);
     padding: 2.4rem;
-    margin: 8rem 0;
+    margin: 2rem 0;
     width: 59rem;
     max-width: 90%;
+    top: 0px;
 }
 
 .app__card-list {
