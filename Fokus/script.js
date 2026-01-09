@@ -12,9 +12,9 @@ const iniciarOuPausarBtIcone = document.querySelector(".app__card-primary-butto-
 const tempoNaTela = document.querySelector('#timer')
 const btnEncerrarTimer = document.querySelector('#button-encerrar') 
 
-const musica = new Audio('/sons/luna-rise-part-one.mp3')
-const audioPlay = new Audio('/sons/play.wav');
-const audioPausa = new Audio('/sons/pause.mp3');
+const musica = new Audio('./sons/luna-rise-part-one.mp3')
+const audioPlay = new Audio('./sons/play.wav');
+const audioPausa = new Audio('./sons/pause.mp3');
 const audioTempoFinalizado = new Audio('./sons/beep.mp3')
 
 let tempoDecorridoEmSegundos = 1500
@@ -61,7 +61,7 @@ function alterarContexto(contexto) {
         contexto.classList.remove('active')
     })
     html.setAttribute('data-contexto', contexto)
-    banner.setAttribute('src', `/imagens/${contexto}.png`)
+    banner.setAttribute('src', `./imagens/${contexto}.png`)
     switch (contexto) {
         case "foco":
             titulo.innerHTML = `Otimize sua produtividade,<br><strong class="app__title-strong">mergulhe no que importa.</strong>`
@@ -98,7 +98,7 @@ function iniciarOuPausar() {
 
         timerPausado = false
         iniciarOuPausarBt.textContent = "Pausar"
-        iniciarOuPausarBtIcone.setAttribute('src', `/imagens/pause.png`)
+        iniciarOuPausarBtIcone.setAttribute('src', `./imagens/pause.png`)
         btnEncerrarTimer.classList.remove('hidden')
         return
     }
@@ -110,7 +110,7 @@ function iniciarOuPausar() {
 
         timerPausado = true
         iniciarOuPausarBt.textContent = "Retomar"
-        iniciarOuPausarBtIcone.setAttribute('src', `/imagens/play_arrow.png`)
+        iniciarOuPausarBtIcone.setAttribute('src', `./imagens/play_arrow.png`)
         btnEncerrarTimer.classList.remove('hidden')
         return
     }
@@ -120,14 +120,14 @@ function iniciarOuPausar() {
 
     timerPausado = false
     iniciarOuPausarBt.textContent = "Pausar"
-    iniciarOuPausarBtIcone.setAttribute('src', `/imagens/pause.png`)
+    iniciarOuPausarBtIcone.setAttribute('src', `./imagens/pause.png`)
     btnEncerrarTimer.classList.remove('hidden')
 }
 
 function zerar() {
     clearInterval(intervaloId) 
     iniciarOuPausarBt.textContent = "Começar"
-    iniciarOuPausarBtIcone.setAttribute('src', `/imagens/play_arrow.png`)
+    iniciarOuPausarBtIcone.setAttribute('src', `./imagens/play_arrow.png`)
     intervaloId = null
 
     btnEncerrarTimer.classList.add('hidden')
