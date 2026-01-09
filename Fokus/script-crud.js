@@ -50,14 +50,14 @@ function criarElementoTarefa(tarefa) {
     };
 
     const imgEditar = document.createElement('img');
-    imgEditar.src = '/imagens/edit.png';
+    imgEditar.src = './imagens/edit.png';
     botao.append(imgEditar);
 
     const botaoExcluir = document.createElement('button');
     botaoExcluir.classList.add('app_button-edit');
 
     const imgExcluir = document.createElement('img');
-    imgExcluir.src = '/imagens/trash.svg';
+    imgExcluir.src = './imagens/trash.svg';
     botaoExcluir.append(imgExcluir);
 
     botaoExcluir.onclick = () => {
