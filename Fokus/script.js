@@ -79,6 +79,9 @@ const contagemRegressiva = () => {
         audioTempoFinalizado.play()
         alert('Tempo finalizado!')
         zerar()
+
+        tempoDecorridoEmSegundos = tempoInicial 
+        mostrarTempo() 
         return
     }
     tempoDecorridoEmSegundos -= 1
