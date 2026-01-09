@@ -44,7 +44,7 @@ function criarElementoTarefa(tarefa) {
 
     botao.onclick = () => {
         textarea.value = tarefa.descricao;
-        formAdicionarTarefa.classList.remove('hidden');
+        formAdicionarTarefa.classList.toggle('hidden');
         tarefaEmEdicao = tarefa;
         paragrafoEmEdicao = p;
     };
