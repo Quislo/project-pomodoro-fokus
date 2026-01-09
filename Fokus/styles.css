@@ -35,13 +35,19 @@ html {
 
 body {
     min-height: 100vh;
-    background: url("/imagens/pattern.png");
+    background: url("./imagens/pattern.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Unbounded', cursive;
+}
+
+
+.hidden {
+    display: none !important;
 }
 
 .app__logo-figure {
@@ -162,9 +168,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px;
 }
 
-.hidden {
-    display: none;
-}
 
 .app__footer {
     display: flex;
@@ -530,3 +533,5 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.8;
     cursor: not-allowed;
 }
+
+
